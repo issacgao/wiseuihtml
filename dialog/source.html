@@ -1,0 +1,14 @@
+__include__("./base.header.html")
+__include__("../output/wiseui/dialog/iphone.js")
+	component = new B.WISE_UI['dialog']({
+		title: '切换轻应用',		
+		target: $('#showmiddlebtn'),
+		//content: "hello, world"
+		content: function(request, response) {
+			$.get('./content.html', function(html) {
+			
+				response(html);
+			});
+		}
+	});	
+__include__("./base.footer.html")

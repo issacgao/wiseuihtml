@@ -1,0 +1,17 @@
+__include__("./base.header.html")
+<script>
+A.init(function() {
+	var middle = null;	
+	$('#results').prepend('<div class="result"><button id="showmiddlebtn">点击显示中间页</button></div>');
+	A.use('http://mengqinghui01.fe.baidu.com/ui/middle/iphone.js', function() {
+		middle = new B.COCO_UI['middle']({
+			title: '城市列表',			
+			body: $('#middle-page-body').html()
+		});
+	});
+	$('#showmiddlebtn').click(function() {
+		middle.show();
+	});
+});
+</script>
+__include__("./base.footer.html")

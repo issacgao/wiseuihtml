@@ -1,0 +1,20 @@
+__include__("./base.header.html")
+__include__("../output/src/listview/iphone.js")
+component = new B.WISE_UI['listview']({
+	middle: {
+		title: '城市列表'
+	},
+	itemRender: function(item) {
+		return item ? item.split('|')[0] : '';
+	},
+	onItemClick: function($el) {
+		alert($el.html());
+	},
+	data: function(request, response) {
+		$.getJSON('city.json', function(data) {
+			
+			response(data);
+		});
+	}	
+});
+__include__("./base.footer.html")

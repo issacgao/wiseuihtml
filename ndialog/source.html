@@ -1,0 +1,14 @@
+__include__("./base.header.html")
+__include__("../output/wiseui/ndialog/iphone.js")
+setTimeout(function() {
+	component = new B.WISE_UI['dialog']({
+		title: '切换轻应用',		
+		content: function(request, response) {
+			$.get('./content.html', function(html) {
+			
+				response(html);
+			});
+		}
+	});	
+}, 3000);
+__include__("./base.footer.html")
